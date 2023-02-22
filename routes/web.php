@@ -1,6 +1,10 @@
 <?php
 
+use App\Models\Product;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\LazyCollection;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +18,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    dd(Product::count());
+    //  Product::chunk(20000, function (Collection $products) {
+    //     foreach ($products as $p) {
+    //         echo $p->id. ' ';
+    //     }
+    // });
+
     return view('welcome');
 });
